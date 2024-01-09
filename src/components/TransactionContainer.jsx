@@ -4,7 +4,10 @@ import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 
 const TransactionContainer = ({ transactions, duration }) => {
+  const [filteredTransactions, setFilteredTransactions] =
+    useState(transactions);
   const [transactionType, setTransactionType] = useState("refunds");
+  const [debounceTimeout, setDebounceTimeout] = useState(null);
 
   const numberToCurrency = (num) => {
     num = num.toString();
@@ -13,6 +16,29 @@ const TransactionContainer = ({ transactions, duration }) => {
     if (otherNumbers != "") lastThree = "," + lastThree;
     var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
     return res;
+  };
+
+  const performSearch = (value) => {
+    let filteredData = transactions.filter((transaction) => {
+      value = value.toString();
+      let orderId = transaction.orderId.toString();
+      let transactionId = transaction.transactionId.toString();
+      return orderId.includes(value) || transactionId.includes(value);
+    });
+    setFilteredTransactions(filteredData);
+  };
+
+  const debounceSearch = (event, debounceTimeout) => {
+    const value = event.target.value;
+
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+
+    const timeout = setTimeout(async () => {
+      await performSearch(value);
+    }, 500);
+    setDebounceTimeout(timeout);
   };
 
   const activeButton = "bg-[#146EB4] text-white";
@@ -60,6 +86,7 @@ const TransactionContainer = ({ transactions, duration }) => {
               className="block w-full py-3 px-4 pl-10 text-sm text-gray-900 rounded-lg bg-white border"
               placeholder="Order ID or transaction ID"
               required
+              onChange={(e) => debounceSearch(e, debounceTimeout)}
             />
           </div>
           {/* Sort / Download */}
@@ -98,7 +125,7 @@ const TransactionContainer = ({ transactions, duration }) => {
               </tr>
             </thead>
             <tbody>
-              {transactions.map((transaction) => {
+              {filteredTransactions.map((transaction) => {
                 const {
                   orderId,
                   processing,

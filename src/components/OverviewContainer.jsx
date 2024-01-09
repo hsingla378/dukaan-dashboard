@@ -25,8 +25,8 @@ const OverviewContainer = ({ setDuration }) => {
       {/* Overview Grid */}
       <div className="grid grid-cols-3 gap-5 py-4 px-8">
         {/* Next Payout */}
-        <div className="rounded-lg text-white overflow-hidden h-fit shadow-sm">
-          <div className="bg-[#146EB4] p-4 ">
+        <div className="rounded-lg text-white overflow-hidden h-fit shadow-sm bg-[#146EB4]">
+          <div className=" p-4 ">
             <div className="flex gap-2 items-center text-base">
               <p>Next Payout</p>
               <CiCircleQuestion className="text-lg" />
@@ -41,7 +41,7 @@ const OverviewContainer = ({ setDuration }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-between bg-[#0E4F82] py-2 px-4 text-[14px]">
+          <div className="flex justify-between bg-[#0E4F82] py-2 px-4 text-[14px] rounded-lg">
             <p className="font-light">Next Payout date:</p>
             <p className="font-normal">Today, 04:00PM</p>
           </div>
