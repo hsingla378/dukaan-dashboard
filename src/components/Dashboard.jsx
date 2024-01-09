@@ -9,9 +9,7 @@ import OverviewContainer from "./OverviewContainer";
 import TooltipContainer from "./TooltipContainer";
 
 const TooltipIcon = ({ text, icon }) => (
-  <TooltipContainer text={text}>
-    {icon}
-  </TooltipContainer>
+  <TooltipContainer text={text}>{icon}</TooltipContainer>
 );
 
 const DashboardHeaderRight = () => (
@@ -31,12 +29,15 @@ const Dashboard = () => {
   return (
     <div className="bg-gray-600 bg-opacity-5 h-full">
       {/* Header */}
-      <div className="flex justify-between items-center w-full py-[12px] px-[32px] bg-white border-b-2">
+      <div className="flex justify-between items-center w-full py-[12px] px-[32px] bg-white border-b-2 sticky top-0 z-10">
         {/* Header Left */}
         <div className="flex items-center gap-4">
           <h1 className="text-[20px] font-semibold text-[#1A181E]">Payouts</h1>
           <div className="flex items-center gap-1 text-sm text-gray-700">
-            <TooltipIcon text="This is Tooltip" icon={<CiCircleQuestion className="text-[14px]" />} />
+            <TooltipIcon
+              text="This is Tooltip"
+              icon={<CiCircleQuestion className="text-[14px]" />}
+            />
             <p className="text-[12px]">How it works</p>
           </div>
         </div>

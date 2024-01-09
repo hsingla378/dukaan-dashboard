@@ -5,7 +5,7 @@ import { RiWallet3Line } from "react-icons/ri";
 import { pageLinks } from "../utils/constants";
 
 function Navbar() {
-  const [activeLink, setActiveLink] = useState("Home");
+  const [activeLink, setActiveLink] = useState("Payouts");
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -51,7 +51,7 @@ function Navbar() {
         <div className="p-1 rounded-md bg-white bg-opacity-10">
           <RiWallet3Line className="text-3xl" />
         </div>
-        <div>
+        <div className="flex flex-col gap-0.5">
           <p className="text-gray-400">Available Credits</p>
           <p>222.10</p>
         </div>
