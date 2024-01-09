@@ -1,29 +1,42 @@
-import { CiCircleQuestion } from "react-icons/ci";
-import { CiSearch } from "react-icons/ci";
+import React, { useState } from "react";
+import { CiCircleQuestion, CiSearch } from "react-icons/ci";
 import { RiMessage2Fill } from "react-icons/ri";
 import { TbCaretDownFilled } from "react-icons/tb";
 
 import { transactions } from "../utils/constants";
 import TransactionContainer from "./TransactionContainer";
 import OverviewContainer from "./OverviewContainer";
-import { useState } from "react";
 import TooltipContainer from "./TooltipContainer";
+
+const TooltipIcon = ({ text, icon }) => (
+  <TooltipContainer text={text}>
+    {icon}
+  </TooltipContainer>
+);
+
+const DashboardHeaderRight = () => (
+  <div className="flex gap-3">
+    <button className="p-3 rounded-full bg-gray-200 text-[20px]">
+      <RiMessage2Fill className="text-[#4D4D4D]" />
+    </button>
+    <button className="p-3 rounded-full bg-gray-200 text-[20px]">
+      <TbCaretDownFilled className="text-[#4D4D4D]" />
+    </button>
+  </div>
+);
 
 const Dashboard = () => {
   const [duration, setDuration] = useState("month");
 
   return (
-    <div className=" bg-gray-600 bg-opacity-5 h-full">
+    <div className="bg-gray-600 bg-opacity-5 h-full">
       {/* Header */}
       <div className="flex justify-between items-center w-full py-[12px] px-[32px] bg-white border-b-2">
         {/* Header Left */}
         <div className="flex items-center gap-4">
           <h1 className="text-[20px] font-semibold text-[#1A181E]">Payouts</h1>
           <div className="flex items-center gap-1 text-sm text-gray-700">
-            <TooltipContainer text={"This is Tooltip"}>
-              <CiCircleQuestion className="text-[14px]" />
-            </TooltipContainer>
-
+            <TooltipIcon text="This is Tooltip" icon={<CiCircleQuestion className="text-[14px]" />} />
             <p className="text-[12px]">How it works</p>
           </div>
         </div>
@@ -40,16 +53,8 @@ const Dashboard = () => {
             required
           />
         </div>
-        <div></div>
         {/* Header Right */}
-        <div className="flex gap-3">
-          <button className="p-3 rounded-full bg-gray-200 text-[20px]">
-            <RiMessage2Fill className="text-[#4D4D4D]" />
-          </button>
-          <button className="p-3 rounded-full bg-gray-200 text-[20px]">
-            <TbCaretDownFilled className="text-[#4D4D4D]" />
-          </button>
-        </div>
+        <DashboardHeaderRight />
       </div>
       <OverviewContainer setDuration={setDuration} />
       <TransactionContainer transactions={transactions} duration={duration} />

@@ -6,8 +6,8 @@ const TooltipContainer = ({ text, children }) => {
   return (
     <div
       className="relative inline-block cursor-pointer"
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
+      onMouseOver={() => setIsVisible(true)}
+      onMouseOut={() => setIsVisible(false)}
     >
       {children}
       {isVisible && (
