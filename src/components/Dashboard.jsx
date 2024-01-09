@@ -7,19 +7,23 @@ import { transactions } from "../utils/constants";
 import TransactionContainer from "./TransactionContainer";
 import OverviewContainer from "./OverviewContainer";
 import { useState } from "react";
+import TooltipContainer from "./TooltipContainer";
 
 const Dashboard = () => {
   const [duration, setDuration] = useState("month");
 
   return (
-    <div className=" bg-black bg-opacity-5 h-full">
+    <div className=" bg-gray-600 bg-opacity-5 h-full">
       {/* Header */}
-      <div className="flex justify-between items-center w-full py-[12px] px-[32px] bg-white">
+      <div className="flex justify-between items-center w-full py-[12px] px-[32px] bg-white border-b-2">
         {/* Header Left */}
         <div className="flex items-center gap-4">
           <h1 className="text-[20px] font-semibold text-[#1A181E]">Payouts</h1>
           <div className="flex items-center gap-1 text-sm text-gray-700">
-            <CiCircleQuestion className="text-[14px]" />
+            <TooltipContainer text={"This is Tooltip"}>
+              <CiCircleQuestion className="text-[14px]" />
+            </TooltipContainer>
+
             <p className="text-[12px]">How it works</p>
           </div>
         </div>

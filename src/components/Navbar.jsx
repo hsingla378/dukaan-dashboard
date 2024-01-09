@@ -15,7 +15,7 @@ import { RiWallet3Line } from "react-icons/ri";
 
 function Navbar() {
   return (
-    <div className="p-3 flex flex-col justify-between h-screen text-white fixed bg-[#1E2640] w-[inherit]">
+    <div className="p-3 flex flex-col justify-between h-screen text-white fixed bg-[#1E2640] w-[inherit] cursor-pointer">
       {/* Nav Top */}
       <div>
         {/* Nav Header */}

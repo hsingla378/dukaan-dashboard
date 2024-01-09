@@ -46,11 +46,11 @@ const TransactionContainer = ({ transactions, duration }) => {
 
   return (
     <div className="py-4 px-8 shadow-sm">
-      <p className="text-[20px] text-[#1A181E] font-bold capitalize">
+      <p className="text-[20px] text-[#1A181E] font-semibold capitalize">
         Transaction | This {duration || "Month"}
       </p>
       {/* Select Option */}
-      <div className="my-5 text-sm flex gap-3  text-[14px]">
+      <div className="my-6 text-sm flex gap-3  text-[14px]">
         <button
           className={
             "py-2 px-6 rounded-full font-medium " +
@@ -71,7 +71,7 @@ const TransactionContainer = ({ transactions, duration }) => {
         </button>
       </div>
       {/* Transactions Table */}
-      <div className="bg-white p-2 rounded-lg">
+      <div className="bg-white p-2 rounded-lg my-4">
         {" "}
         {/* Search / Sort / Download */}
         <div className="flex justify-between items-center">

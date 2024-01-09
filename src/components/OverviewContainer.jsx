@@ -1,7 +1,7 @@
 import { CiCircleQuestion } from "react-icons/ci";
 import { FaAngleRight } from "react-icons/fa";
 import "react-tooltip/dist/react-tooltip.css";
-import { Tooltip } from "react-tooltip";
+import TooltipContainer from "./TooltipContainer";
 
 const OverviewContainer = ({ setDuration }) => {
   return (
@@ -9,7 +9,8 @@ const OverviewContainer = ({ setDuration }) => {
       {" "}
       {/* Overview Header */}
       <div className="flex justify-between py-3 px-8">
-        <p className="text-[20px] text-[#1A181E] font-bold">Overview</p>
+        <p className="text-[20px] text-[#1A181E] font-semibold">Overview</p>
+
         <div>
           <select
             className="border-2 p-2 rounded-lg flex cursor-pointer"
@@ -23,13 +24,15 @@ const OverviewContainer = ({ setDuration }) => {
         </div>
       </div>
       {/* Overview Grid */}
-      <div className="grid grid-cols-3 gap-5 py-4 px-8">
+      <div className="grid grid-cols-3 gap-5 py-2 px-8">
         {/* Next Payout */}
         <div className="rounded-lg text-white overflow-hidden h-fit shadow-sm bg-[#146EB4]">
           <div className=" p-4 ">
             <div className="flex gap-2 items-center text-base">
               <p>Next Payout</p>
-              <CiCircleQuestion className="text-lg" />
+              <TooltipContainer text={"This is Tooltip"}>
+                <CiCircleQuestion className="text-lg" />
+              </TooltipContainer>
             </div>
             <div className="mt-3 mb-2 flex justify-between">
               <p className="text-[32px] font-medium">₹2,312.23</p>
@@ -50,7 +53,10 @@ const OverviewContainer = ({ setDuration }) => {
         <div className="bg-white p-4 rounded-xl h-fit shadow-sm">
           <div className="flex gap-2 items-center text-base">
             <p>Amount Pending</p>
-            <CiCircleQuestion className="text-lg" />
+
+            <TooltipContainer text={"This is Tooltip"}>
+              <CiCircleQuestion className="text-lg" />
+            </TooltipContainer>
           </div>
           <div className="mt-3 mb-2 flex justify-between">
             <p className="text-[32px] font-medium">₹92,312,20</p>
@@ -66,8 +72,9 @@ const OverviewContainer = ({ setDuration }) => {
         <div className="bg-white p-4 rounded-xl h-fit shadow-sm">
           <div className="flex gap-2 items-center">
             <p>Amount Processed</p>
-
-            <CiCircleQuestion className="text-lg" />
+            <TooltipContainer text={"This is Tooltip"}>
+              <CiCircleQuestion className="text-lg" />
+            </TooltipContainer>
           </div>
           <div className="mt-3 mb-2 flex justify-between">
             <p className="text-[32px] font-medium">₹23,92,312.19</p>
