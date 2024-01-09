@@ -2,6 +2,7 @@ import shopLogo from "./../assets/shop_logo.png";
 import { FaAngleDown } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
 import { LuClipboardList } from "react-icons/lu";
+import { TiThLargeOutline } from "react-icons/ti";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { TfiAnnouncement } from "react-icons/tfi";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
@@ -14,65 +15,67 @@ import { RiWallet3Line } from "react-icons/ri";
 
 function Navbar() {
   return (
-    <div className="p-3 flex flex-col justify-between h-full">
+    <div className="p-3 flex flex-col justify-between h-screen text-white fixed bg-[#1E2640] w-[inherit]">
       {/* Nav Top */}
       <div>
         {/* Nav Header */}
-        <div className="flex justify-between items-center p-2">
-          <img src={shopLogo} alt="Nishyan" className="w-[2.5rem]" />
-          <div className="flex flex-col">
-            <span className=" font-medium">Nishyan</span>
-            <a href="#" className="text-gray-400 font-medium underline text-sm">
-              Visit Store
-            </a>
+        <div className="flex items-center justify-between p-2">
+          <div className="flex justify-between items-center gap-3">
+            <img src={shopLogo} alt="Nishyan" className="w-[39px]" />
+            <div className="flex flex-col gap-0.5">
+              <span className="font-medium text-[15px]">Nishyan</span>
+              <a href="#" className="underline text-[13px] text-gray-300">
+                Visit Store
+              </a>
+            </div>
           </div>
-          <FaAngleDown />
+          <FaAngleDown className="text-xl" />
         </div>
         {/* Pages Links */}
-        <div className="mt-4 text-base text-gray-300">
+        <div className="mt-4 text-gray-300 font-semibold">
           <div className="flex gap-3 py-2 px-3 items-center">
-            <GoHome />
-            <p>Home</p>
+            <GoHome className="text-[16.96px]" />
+            <p className="text-[14px]">Home</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <LuClipboardList />
-            <p>Orders</p>
+            <LuClipboardList className="text-[16.96px]" />
+            <p className="text-[14px]">Orders</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <GoHome />
-            <p>Products</p>
+            <TiThLargeOutline className="text-[16.96px]" />
+            <p className="text-[14px]">Products</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <CiDeliveryTruck />
-            <p>Delivery</p>
+            <CiDeliveryTruck className="text-[16.96px]" />
+            <p className="text-[14px]">Delivery</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <TfiAnnouncement />
-            <p>Marketing</p>
+            <TfiAnnouncement className="text-[16.96px]" />
+            <p className="text-[14px]">Marketing</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <TbBrandGoogleAnalytics />
-            <p>Analytics</p>
+            <TbBrandGoogleAnalytics className="text-[16.96px]" />
+            <p className="text-[14px]">Analytics</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center rounded-md bg-white bg-opacity-10 text-gray-200">
-            <FaMoneyBillTransfer />
-            <p>Payouts</p>
+            <FaMoneyBillTransfer className="text-[16.96px]" />
+            <p className="text-[14px]">Payouts</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <BiSolidOffer />
-            <p>Discounts</p>
+            <BiSolidOffer className="text-[16.96px]" />
+            <p className="text-[14px]">Discounts</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <GoPeople />
-            <p>Audience</p>
+            <GoPeople className="text-[16.96px]" />
+            <p className="text-[14px]">Audience</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <IoColorPaletteOutline />
-            <p>Appearance</p>
+            <IoColorPaletteOutline className="text-[16.96px]" />
+            <p className="text-[14px]">Appearance</p>
           </div>
           <div className="flex gap-3 py-2 px-3 items-center">
-            <MdElectricBolt />
-            <p>Plugins</p>
+            <MdElectricBolt className="text-[16.96px]" />
+            <p className="text-[14px]">Plugins</p>
           </div>
         </div>
       </div>
