@@ -4,6 +4,8 @@ import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
 
 const TransactionContainer = ({ transactions, duration }) => {
+  const [transactionType, setTransactionType] = useState("refunds");
+
   const numberToCurrency = (num) => {
     num = num.toString();
     var lastThree = num.substring(num.length - 3);
@@ -13,17 +15,32 @@ const TransactionContainer = ({ transactions, duration }) => {
     return res;
   };
 
+  const activeButton = "bg-[#146EB4] text-white";
+  const nonActiveButton = " bg-black bg-opacity-10 text-[#808080]";
+
   return (
     <div className="py-4 px-8 shadow-sm">
       <p className="text-[20px] text-[#1A181E] font-bold capitalize">
         Transaction | This {duration || "Month"}
       </p>
       {/* Select Option */}
-      <div className="my-5 text-sm flex gap-3">
-        <button className="bg-black bg-opacity-10 py-2 px-6 rounded-full font-medium text-[#808080] text-[14px]">
+      <div className="my-5 text-sm flex gap-3  text-[14px]">
+        <button
+          className={
+            "py-2 px-6 rounded-full font-medium " +
+            (transactionType === "payouts" ? activeButton : nonActiveButton)
+          }
+          onClick={() => setTransactionType("payouts")}
+        >
           Payouts {"(22)"}
         </button>
-        <button className="bg-[#146EB4] py-2 px-6 rounded-full font-medium text-white text-[14px]">
+        <button
+          className={
+            "py-2 px-6 rounded-full font-medium " +
+            (transactionType === "refunds" ? activeButton : nonActiveButton)
+          }
+          onClick={() => setTransactionType("refunds")}
+        >
           Refunds {"(6)"}
         </button>
       </div>

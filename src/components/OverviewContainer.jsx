@@ -1,5 +1,7 @@
 import { CiCircleQuestion } from "react-icons/ci";
 import { FaAngleRight } from "react-icons/fa";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const OverviewContainer = ({ setDuration }) => {
   return (
@@ -64,6 +66,7 @@ const OverviewContainer = ({ setDuration }) => {
         <div className="bg-white p-4 rounded-xl h-fit shadow-sm">
           <div className="flex gap-2 items-center">
             <p>Amount Processed</p>
+
             <CiCircleQuestion className="text-lg" />
           </div>
           <div className="mt-3 mb-2 flex justify-between">
