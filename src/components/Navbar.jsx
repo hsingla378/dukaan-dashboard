@@ -1,4 +1,3 @@
-import React from "react";
 import shopLogo from "./../assets/shop_logo.png";
 import { FaAngleDown } from "react-icons/fa";
 import { GoHome } from "react-icons/go";

@@ -8,7 +8,7 @@ const Payouts = () => {
       <div className="col-span-2 bg-blue-950 h-full w-full text-white">
         <Navbar />
       </div>
-      <div className="col-span-10 h-full w-full">
+      <div className="col-span-10 h-full w-full ">
         <Dashboard />
       </div>
     </div>
