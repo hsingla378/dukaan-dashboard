@@ -1,8 +1,23 @@
-# React + Vite
+# Dukaan Payouts Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This repository contains the codebase for the Dukaan Payouts Dashboard, a web application designed to provide insights and information about payouts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
+
+Visit the live demo [here](https://dukaan-dashboard-kappa.vercel.app/).
+
+## Features
+
+- **Payout Overview**: View a summary of payouts, including total amount, successful transactions, and pending transactions.
+  
+- **Transaction History**: Explore a detailed transaction history with information such as transaction ID, date, and status.
+
+- **Filter and Search**: Easily filter and search transactions based on date, status, or other relevant parameters.
+
+## Technologies Used
+
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
+- [Vite](https://vitejs.dev/) - Next-generation front-end tooling for modern web development.
